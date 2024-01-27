@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.4.css"/>
+    <link rel="stylesheet" href="daily_print.css"/>
+    <title>Example web page</title>
+</head>
+<body>
+
+<div class="container">
+    <div style="width: 50em; text-align: center;">
+        <h1>Tasks for today</h1>
+        <hr/>
+        <div>
+            {% for item in items %}
+            <div class="dp-item"><span class="dp-checkbox">&#x2610;</span>&nbsp;<span class="dp-task-item">{{ item }}</span></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
