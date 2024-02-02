@@ -28,7 +28,16 @@
                             <td class="filler"></td>
                         </tr>
                         {% endfor -%}
-                    </table>
+                        {%- for item in dot_items %}
+                        <tr>
+                            <td class="filler"></td>
+                            <td class="dp-checkbox">&nbsp;&#x2022;</td>
+                            <td>
+                                <div class="dp-task-item">{{ item }}</div>
+                            </td>
+                            <td class="filler"></td>
+                        </tr>
+                        {% endfor -%}                    </table>
                 </div>
             </td>
             <td style="width: 10%">&nbsp;</td>
