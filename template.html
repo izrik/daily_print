@@ -9,16 +9,31 @@
 </head>
 <body>
 
-<div class="container">
-    <div style="width: 50em; text-align: center;">
-        <h1>Tasks for today</h1>
-        <hr/>
-        <div>
-            {% for item in items %}
-            <div class="dp-item"><span class="dp-checkbox">&#x2610;</span>&nbsp;<span class="dp-task-item">{{ item }}</span></div>
-            {% endfor %}
-        </div>
-    </div>
+<div class="container" style="padding-left: 10em;">
+    <table>
+        <tr>
+            <td style="width: 10%">&nbsp;</td>
+            <td style="width: 80%">
+                <div style="width: 50em; ">
+                    <h1 style="text-align: center; padding-top: 2em;">Tasks for today</h1>
+                    <hr/>
+                    <table style="margin: 0 auto;" class="dp-item">
+                        {%- for item in items %}
+                        <tr>
+                            <td class="filler"></td>
+                            <td class="dp-checkbox">[&nbsp;&nbsp;]</td>
+                            <td>
+                                <div class="dp-task-item">{{ item }}</div>
+                            </td>
+                            <td class="filler"></td>
+                        </tr>
+                        {% endfor -%}
+                    </table>
+                </div>
+            </td>
+            <td style="width: 10%">&nbsp;</td>
+        </tr>
+    </table>
 </div>
 
 </body>

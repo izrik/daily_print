@@ -1,6 +1,11 @@
 
+td.filler {
+    width: 10%;
+}
+
 .dp-checkbox {
-    /*font-size: 200%;*/
+    width: 23px;
+    vertical-align: top;
 }
 
 .dp-item {
@@ -9,5 +14,6 @@
 }
 
 .dp-task-item {
-    /*font-size: 200%;*/
+    margin: 0 1em;
+    vertical-align: top;
 }
