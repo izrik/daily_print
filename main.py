@@ -15,17 +15,18 @@ def main():
                         const='html', dest='format')
     parser.add_argument('--pdf', action='store_const',
                         const='pdf', dest='format')
+    parser.add_argument('--name')
+    parser.add_argument('items', nargs='+')
 
     args = parser.parse_args()
 
     with open('template.html') as f:
         template = Template(f.read())
-        items = [
-            'Do the dishes',
-            'Check the mail',
-            'Buy stamps',
-        ]
-    html = template.render(items=items)
+    items = args.items
+    heading = 'Tasks for today'
+    if args.name:
+        heading = f'{args.name}\'s tasks for today'
+    html = template.render(items=items, heading=heading)
     if args.format == 'html':
         print(html)
     elif args.format == 'pdf':
